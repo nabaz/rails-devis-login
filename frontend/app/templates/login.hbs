@@ -1,4 +1,14 @@
 <!-- app/templates/login.hbs -->
 <h2 id="title">Login</h2>
 
-{{login-form}}
+<form {{action  'login' email password on='submit'}}>
+    <div class="form-control">
+        <label>Username</label>
+        {{input placeholder='Enter username here' value=email}}
+    </div>
+    <div class="form-control">
+        <label>Password</label>
+        {{input placeholder='Enter password here' value=password type='password'}}
+    </div>
+    <button type="submit" class="button button_primary">Login</button>
+</form>
