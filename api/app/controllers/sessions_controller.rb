@@ -2,12 +2,13 @@ class SessionsController < Devise::SessionsController
   respond_to :html, :json
 
   def create
-  
+
     super do |user|
       if request.format.json?
         data = {
             token: user.authentication_token,
-            email: user.email
+            email: user.email,
+            name: user.name
         }
         render json: data, status: 201 and return
       end
